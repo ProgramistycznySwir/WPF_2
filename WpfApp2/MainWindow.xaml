@@ -1,0 +1,63 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" MinHeight="375" Width="800" MinWidth="450">
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+        
+        <DockPanel Grid.Row="0" Margin="10">
+                <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Zamawiający:"/>
+                <TextBox HorizontalAlignment="Stretch" Margin="10,0,0,0"/>
+            </DockPanel>
+        <DockPanel Grid.Row="1">
+            <GroupBox Header="Rodzaj prenumeraty" Margin="10" Padding="5">
+                <StackPanel>
+                    <RadioButton Margin="3">Trzymiesięczna</RadioButton>
+                    <RadioButton Margin="3">Półroczna</RadioButton>
+                    <RadioButton Margin="3">Roczna</RadioButton>
+                    <RadioButton Margin="3">Dwuletnia</RadioButton>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Adres" Margin="10">
+                <StackPanel>
+                    <DockPanel>
+                        <TextBlock Text="Ulica:" Margin="5"/>
+                        <StackPanel Margin="5">
+                            <TextBox Margin="3"/>
+                            <TextBox Margin="3"/>
+                            <DockPanel Margin="3">
+                                <TextBlock Margin="5" Text="Kod:" />
+                                <TextBox MinWidth="50" />
+                                <TextBlock Margin="5" Text="Poczta:" />
+                                <TextBox />
+                            </DockPanel>
+                        </StackPanel>
+                    </DockPanel>
+                </StackPanel>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel Grid.Row="2" Margin="10">
+            <TextBlock Text="Zgoda na:"  Margin="5" />
+            <CheckBox Margin="5">przetwarzanie danych</CheckBox>
+            <CheckBox Margin="5">otrzymywanie ofert</CheckBox>
+        </DockPanel>
+        <DockPanel Grid.Row="3" Margin="10" >
+            <TextBlock Text="Uwagi:" Margin="5"/>
+            <TextBox VerticalAlignment="Stretch" />
+        </DockPanel>
+        <DockPanel Grid.Row="4" Margin="10" VerticalAlignment="Bottom">
+            <Button Margin="5" Width="75" HorizontalAlignment="Right" DockPanel.Dock="Right">Anuluj</Button>
+            <Button Margin="5" Width="50" HorizontalAlignment="Right" DockPanel.Dock="Right">OK</Button>
+        </DockPanel>
+    </Grid>
+</Window>
